@@ -175,7 +175,7 @@ class RedBase(
             raise RuntimeError("Red doesn't accept owner_id kwarg, use owner_ids instead.")
 
         if "intents" not in kwargs:
-            intents = discord.Intents.all()
+            intents = discord.Intents.default()
             for intent_name in cli_flags.disable_intent:
                 setattr(intents, intent_name, False)
             kwargs["intents"] = intents
